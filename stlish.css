@@ -1,0 +1,138 @@
+/* Set background image for the entire page */
+body {
+    background: url('C:/Users/pc/OneDrive - USTUNBERK HOLDING/Pictures/car.jpg') center center/cover no-repeat fixed;
+    background-size: cover;
+    color: #3c4b3bd0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the h1 heading */
+h1 {
+    font-size: 20px;
+    margin: 0; /* Remove default margin */
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #bc4343;
+}
+/* Style the login form container */
+.login-container {
+    max-width: 60000px;
+    margin: 1000 auto;
+    background-color: rgb(101, 70, 70); /* Transparent white background */
+    padding: 180px;
+    border-radius: 100px;
+    box-shadow: 0 0 100px rgba(218, 153, 153, 0.847);
+}
+
+/* Style form elements */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4921074f;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    font-size: 10px; /* Adjust the font size */
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #492107;
+}
+
+/* Style the audio container */
+.audio-container {
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0); /* Transparent white background */
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+
+.delay-input {
+    width: 200px;
+    height: 50px;
+    background: #e8d8a22c;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the font size */
+    color: #000000; /* Adjust the color */
+    font-weight: bold;
+}
+
+#logo {
+    max-width: 200px; /* Adjust as needed */
+    max-height: 120px; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login-container {
+    max-width: 500px; /* Adjust as needed */
+    background-color: rgba(58, 75, 58, 0.627);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Update the color for V-Autocontrol */
+.vocal-item {
+    background-color: #fff9f570; /* Background color for the vocal items */
+    border-radius: 10px; /* Rounded corners for the vocal items */
+    padding: 15px; /* Padding for the vocal items */
+    margin-bottom: 20px; /* Margin at the bottom of each vocal item for separation */
+    box-shadow: 0 0 80px rgb(0, 0, 0); /* Box shadow for a subtle effect */
+}
+
+/* Update the color for Vocal 2 */
+.vocal-item:nth-child(2) .vocal-label {
+    color: #040000; /* Replace with your desired color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+
+/* Update the color for Vocal 3 */
+.vocal-item:nth-child(3) .vocal-label {
+    color: #000000; /* Replace with your desired color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+/* Update the color for V-Autocontrol */
+.vocal-item:nth-child(1) {
+    color: #000000; /* Replace with your desired color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+

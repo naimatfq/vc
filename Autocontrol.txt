@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Audio</title>
+</head>
+<body>
+
+    <button onclick="lireAudio()">Lire Audio</button>
+
+    <audio id="lecteurAudio" src="C:\Users\pc\OneDrive - USTUNBERK HOLDING\Desktop\spilt pdf\sit\auto\auto.opus"></audio>
+
+    <script>
+        function lireAudio() {
+            var lecteurAudio = document.getElementById('lecteurAudio');
+            lecteurAudio.play();
+        }
+    </script>
+
+</body>
+</html>

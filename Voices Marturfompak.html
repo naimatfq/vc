@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stlish.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            background: url('C:/Users/pc/OneDrive - USTUNBERK HOLDING/Pictures/car.jpg') center center/cover no-repeat fixed;
+            background-size: cover;
+            color: #3c4b3b81;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #fdffff;
+            max-width: 10000px;
+            max-height: 100px;
+            margin-bottom: 100px;
+            height: 100%;
+        }
+
+        #logo {
+             max-width: 400px;
+             max-height: 1200px;
+             margin-top: 600px; /* Adjust as needed */
+             position: fixed;
+             top: 0;
+             left: 50%;
+             transform: translateX(-50%);
+        }
+
+        #buttons {
+            display: flex;
+            gap: 300px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .login-container {
+            max-width: 900px;
+            background-color: rgba(58, 75, 58, 0.627);
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            left: 20px;
+        }
+
+        #loginForm {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #loginForm label {
+            margin-bottom: 40px;
+            color: rgb(233, 233, 233);
+            margin-top: 50px;
+    
+        }
+
+        #loginButton {
+            padding: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #9bba107b;
+        }
+
+        .vocal-list {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.007);
+            padding: 200px;
+            border-radius: 9000px;
+            box-shadow: 0 0 50px rgb(255, 235, 235);
+            display: none; /* Initially hide the vocal list */
+        }
+
+        .vocal-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .vocal-label {
+            flex-grow: 1;
+            margin-right: 40px;
+        }
+
+        .vocal-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .vocal-play,
+        .vocal-stop {
+            padding: 6px;
+            font-size: 30px;
+        }
+
+        .delay-input {
+            margin-top: 50px;
+        }
+
+        .timer {
+            margin-top: 5px;
+            font-size: 30px;
+            color: #fffffff6;
+        }
+        .timer-container {
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .timer-label {
+            font-size: 14px;
+            color: #ffffff;
+            margin-right: 5px;
+        }
+
+        .timer-value {
+            font-size: 16px;
+            color: #15d1d4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo -->
+    <img id="logo" src="C:/Users/pc/OneDrive - USTUNBERK HOLDING/Pictures/logo mar.png" alt="Logo">
+
+    <!-- Login Form -->
+
+    <h1>Welcome to the Playlist of Marturfompak</h1>
+    <div class="login-container" id="loginContainer">
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+        <div id="enteredValues"></div> <!-- Display entered values here -->
+    </div>
+
+    <!-- Vocal List -->
+    <div class="vocal-list" id="vocalList">
+        <!-- Vocal Item 1 -->
+        <div class="vocal-item">
+            <div class="vocal-label"> V-Autocontrol</div>
+            <div class="vocal-controls">
+                <button class="vocal-play" onclick="startVocal('vocal1')">Play</button>
+                <button class="vocal-stop" onclick="stopVocal('vocal1')">Stop</button>
+                <label for="vocal1Delay" class="delay-input">Delay sleep sec:</label>
+                <input type="number" id="vocal1Delay" class="delay-input" placeholder="Delay (seconds)" min="0" value="5">
+                <div id="vocal1Timer" class="timer"></div>
+            </div>
+        </div>
+
+        <!-- Vocal Item 2 -->
+        <div class="vocal-item">
+            <div class="vocal-label">Vocal 2</div>
+            <div class="vocal-controls">
+                <button class="vocal-play" onclick="startVocal('vocal2')">Play</button>
+                <button class="vocal-stop" onclick="stopVocal('vocal2')">Stop</button>
+                <label for="vocal2Delay" class="delay-input">Delay sleep sec :</label>
+                <input type="number" id="vocal2Delay" class="delay-input" placeholder="Delay (seconds)" min="0" value="5">
+                <div id="vocal2Timer" class="timer"></div>
+            </div>
+        </div>
+
+        <!-- Vocal Item 3 -->
+        <div class="vocal-item">
+            <div class="vocal-label">Vocal 3</div>
+            <div class="vocal-controls">
+                <button class="vocal-play" onclick="startVocal('vocal3')">Play</button>
+                <button class="vocal-stop" onclick="stopVocal('vocal3')">Stop</button>
+                <label for="vocal3Delay" class="delay-input">Delay sleep sec:</label>
+                <input type="number" id="vocal3Delay" class="delay-input" placeholder="Delay (seconds)" min="0" value="5">
+                <div id="vocal3Timer" class="timer"></div>
+            </div>
+        </div>
+
+        <!-- Add more vocal items as needed -->
+    </div>
+
+    <script>
+        var vocalPlayers = {}; // Object to store individual vocal players
+        var vocalTimers = {}; // Object to store timers for each vocal
+        var currentlyPlaying = null; // Variable to track the currently playing vocal
+
+        function startVocal(vocalName) {
+            // Stop the currently playing vocal, if any
+            stopCurrentVocal();
+
+            if (!vocalPlayers[vocalName]) {
+                vocalPlayers[vocalName] = document.createElement('audio');
+                // Adjust the path for each vocal
+                vocalPlayers[vocalName].src = getVocalPath(vocalName);
+                vocalPlayers[vocalName].id = vocalName + 'Player';
+                document.body.appendChild(vocalPlayers[vocalName]);
+            }
+
+            // Play the vocal
+            vocalPlayers[vocalName].play();
+
+            // Set an event listener for the end of the audio
+            vocalPlayers[vocalName].addEventListener('ended', function () {
+                // Get the delay value for the specific vocal
+                var delayInput = document.getElementById(vocalName + 'Delay');
+                var delay = parseInt(delayInput.value, 10);
+
+                // Set a timeout for the specified delay and then repeat
+                setTimeout(function () {
+                    startVocal(vocalName);
+                }, delay * 1000); // Convert seconds to milliseconds
+
+                // Start the timer for the vocal
+                startTimer(vocalName, delay);
+            });
+
+            // Update the currently playing vocal
+            currentlyPlaying = vocalPlayers[vocalName];
+        }
+
+        function stopVocal(vocalName) {
+            // Pause the vocal
+            if (vocalPlayers[vocalName]) {
+                vocalPlayers[vocalName].pause();
+                // Remove the event listener for the end of the audio
+                vocalPlayers[vocalName].removeEventListener('ended', null);
+                // Stop the timer for the vocal
+                stopTimer(vocalName);
+                // Reset the currently playing vocal
+                currentlyPlaying = null;
+            }
+        }
+
+        function stopCurrentVocal() {
+            // Stop the currently playing vocal, if any
+            if (currentlyPlaying) {
+                currentlyPlaying.pause();
+                currentlyPlaying.removeEventListener('ended', null);
+                // Stop the timer for the currently playing vocal
+                stopTimer(currentlyPlaying.id.replace('Player', ''));
+                currentlyPlaying = null;
+            }
+        }
+
+        function startTimer(vocalName, delay) {
+            var timerElement = document.getElementById(vocalName + 'Timer');
+            var remainingTime = delay;
+
+            function updateTimer() {
+                timerElement.textContent = 'Remaining time: ' + remainingTime + 's';
+
+                if (remainingTime > 0) {
+                    remainingTime--;
+                    vocalTimers[vocalName] = setTimeout(updateTimer, 1000);
+                } else {
+                    timerElement.textContent = 'Delay complete';
+                }
+            }
+
+            // Clear previous timer, if any
+            stopTimer(vocalName);
+
+            // Initial call to start the timer
+            updateTimer();
+        }
+
+        function stopTimer(vocalName) {
+            var timerElement = document.getElementById(vocalName + 'Timer');
+            timerElement.textContent = ''; // Clear the timer display
+
+            // Clear the timer
+            if (vocalTimers[vocalName]) {
+                clearTimeout(vocalTimers[vocalName]);
+                vocalTimers[vocalName] = null;
+            }
+        }
+
+        function getVocalPath(vocalName) {
+            // Define the paths for each vocal
+            var vocalPaths = {
+                vocal1: "C:/Users/pc/OneDrive - USTUNBERK HOLDING/Desktop/spilt pdf/sit/auto/MSFW.mp3",
+                vocal2: "C:/Users/pc/OneDrive - USTUNBERK HOLDING/Desktop/spilt pdf/sit/auto/MSF.MP3",
+                vocal3: "C:/Users/pc/OneDrive - USTUNBERK HOLDING/Desktop/spilt pdf/sit/auto/auto4.mp3"
+                // Add more paths as needed
+            };
+
+            return vocalPaths[vocalName] || ""; // Return the path for the specified vocal
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+
+            // Simple login check (replace with your authentication logic)
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'naima' && password === '1') {
+                // Login successful, show the vocal list
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('vocalList').style.display = 'block';
+
+                // Display entered values
+                document.getElementById('enteredValues').innerHTML =
+                    '<p>Entered Username: ' + username + '</p>' +
+                    '<p>Entered Password: ' + password + '</p>';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
